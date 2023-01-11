@@ -1,0 +1,19 @@
+main {
+    margin: 50px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 40px;
+    color: lightblue;
+}
+
+.deck {
+    width: 300px;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+}
