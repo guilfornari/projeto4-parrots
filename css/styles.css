@@ -12,8 +12,15 @@ h1 {
 }
 
 .deck {
-    width: 300px;
+    width: 100%;
     background-color: lightcoral;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.carta {
+    width: 100px;
+    height: 100px;
+    background-color: #99CEA8;
+    margin: 34px;
 }
