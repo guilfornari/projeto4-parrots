@@ -16,7 +16,8 @@ while (amountOfCards != 4
 document.querySelector(".deck").innerHTML = "";
 
 function addCards() {
-    deckOfCards.push(`<div class="carta">carta${i}</div>`)
+    deckOfCards.push(`<div class="game-card bottom-side" onclick="turn(this)">carta${i}</div>`)
+
 }
 
 function shuffle() {
@@ -40,6 +41,36 @@ while (n < amountOfCards) {
     setCards();
     n++;
 }
+
+let card;
+let checker = "No cards"
+function turn(card) {
+
+    if (card.parentNode.classList.contains("token")) {
+        checker = document.querySelector(".top-side").innerHTML;
+
+        if (checker === card.innerHTML) {
+            document.querySelector(".top-side").classList.add("selected-correctly");
+            document.querySelector(".top-side").classList.remove("top-side");
+            card.classList.add("selected-correctly");
+            card.parentNode.classList.remove("token");
+        } else {
+            card.classList.add("top-side");
+            card.parentNode.classList.remove("token");
+            setTimeout(turnDown, 1000, card);
+        }
+    } else {
+        card.classList.add("top-side")
+        card.parentNode.classList.add("token");
+    }
+
+}
+function turnDown(card) {
+    notPair = document.querySelectorAll(".top-side");
+    notPair[0].classList.remove("top-side");
+    notPair[1].classList.remove("top-side");
+}
+
 
 
 

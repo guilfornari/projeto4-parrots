@@ -18,9 +18,20 @@ h1 {
     flex-wrap: wrap;
 }
 
-.carta {
-    width: 100px;
-    height: 100px;
-    background-color: #99CEA8;
+.game-card {
+    width: 117px;
+    height: 146px;
     margin: 34px;
+}
+
+.bottom-side {
+    background-color: gray
+}
+
+.bottom-side.top-side {
+    background-color: #99CEA8;
+}
+
+.bottom-side.selected-correctly {
+    background-color: #99CEA8;
 }
