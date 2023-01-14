@@ -1,37 +1,84 @@
+body {
+    background-color: #eef9bf;
+}
+
 main {
     margin: 50px auto;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color: #eef9bf;
+
 }
 
 h1 {
-    font-size: 40px;
-    color: lightblue;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
 }
 
 .deck {
     width: 100%;
-    background-color: lightcoral;
+    background-color: #eef9bf;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .game-card {
     width: 117px;
     height: 146px;
     margin: 34px;
+    position: relative;
+    cursor: pointer;
 }
 
-.bottom-side {
-    background-color: gray
+figure {
+    width: 100px;
 }
 
-.bottom-side.top-side {
-    background-color: #99CEA8;
+img {
+    width: 100%;
 }
 
-.bottom-side.selected-correctly {
-    background-color: #99CEA8;
+.side {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.front-side {
+    transform: rotateY(0deg);
+}
+
+.back-side {
+    transform: rotateY(-180deg);
+}
+
+hi .mobile {
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.004em;
 }
