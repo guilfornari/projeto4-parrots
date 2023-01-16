@@ -73,12 +73,14 @@ img {
     transform: rotateY(-180deg);
 }
 
-hi .mobile {
+@media (max-width: 600px) {
 
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 42px;
-    text-align: center;
-    letter-spacing: -0.004em;
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        letter-spacing: -0.004em;
+    }
 }

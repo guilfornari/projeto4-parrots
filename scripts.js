@@ -18,12 +18,12 @@ document.querySelector(".deck").innerHTML = "";
 
 function addCards() {
     deckOfCards.push(`
-        <div class="game-card" onclick="turn(this)">carta${i}
+        <div data-test="card" class="game-card" onclick="turn(this)">
         <div class="front-face side">
-            <figure><img src="images/bobrossparrot.gif" alt="game card front side"></figure>
+            <figure><img data-test="face-up-image" src="images/${i}.gif" alt="game card front side"></figure>
         </div>
         <div class="side">
-        <figure><img src="images/back.png" alt="game card back side"></figure>
+        <figure><img data-test="face-down-image" src="images/back.png" alt="game card back side"></figure>
         </div>
         </div>`);
 
@@ -50,10 +50,11 @@ while (n < amountOfCards) {
     setCards();
     n++;
 }
-
+let counter = 0;
 let card;
 let checker = "No cards";
 function turn(card) {
+    counter++;
 
     if (card.parentNode.classList.contains("token")) {
         checker = document.querySelector(".top-side figure").innerHTML;
@@ -65,6 +66,9 @@ function turn(card) {
             card.childNodes[1].classList.add("front-side");
             card.childNodes[3].classList.add("back-side");
             card.parentNode.classList.remove("token");
+            if (document.querySelectorAll(".back-side").length == amountOfCards) {
+                setTimeout(gameOver, 1000);
+            }
         } else {
             card.classList.add("top-side");
             card.childNodes[1].classList.add("front-side");
@@ -89,13 +93,9 @@ function turnDown(card) {
     notPair[0].classList.remove("top-side");
     notPair[1].classList.remove("top-side");
 }
-
-/*
-function turn(card) {
-    card.childNodes[1].classList.toggle("frente");
-    card.childNodes[3].classList.toggle("verso");
+function gameOver() {
+    alert(`Você ganhou em ${counter} jogadas!`);
 }
-*/
 
 
 
